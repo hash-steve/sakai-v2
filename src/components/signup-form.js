@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Field } from 'react-final-form';
+// import { Form, Field } from 'react-final-form';
 import { useMemberstack } from "@memberstack/react";
 import {Button} from 'primereact/button';
 import {Dialog} from 'primereact/dialog';
@@ -62,83 +62,83 @@ const SignupForm = (props) => {
         return errors;
     };
 
-    const onSubmit = async (data, form) => {              
-        if(formMode==='edit'){
-            setFormMode('review');
-            return;
-        }
+    // const onSubmit = async (data, form) => {              
+    //     if(formMode==='edit'){
+    //         setFormMode('review');
+    //         return;
+    //     }
 
-        var errors = false;
+    //     var errors = false;
 
-        try {
-            if(!member) {
-                const msMember = await memberstack.signupMemberEmailPassword({
-                    email: data.email,
-                    password: data.password,                
-                })
+    //     try {
+    //         if(!member) {
+    //             const msMember = await memberstack.signupMemberEmailPassword({
+    //                 email: data.email,
+    //                 password: data.password,                
+    //             })
         
-                if(msMember) {
-                    await memberstack.updateMember({
-                        customFields: {
-                            firstname: data.firstname,
-                            lastname: data.lastname,
-                        }
-                    });
+    //             if(msMember) {
+    //                 await memberstack.updateMember({
+    //                     customFields: {
+    //                         firstname: data.firstname,
+    //                         lastname: data.lastname,
+    //                     }
+    //                 });
 
-                    let paramStr=`msmemberid=${msMember.data.member.id}&authemail=${msMember.data.member.auth.email}&firstname=${data.firstname}&lastname=${data.lastname}&datecreate=${msMember.data.member.createdAt}`;                
-                    const member=await axios(`/.netlify/functions/member-create?${paramStr}`)
-                        .then(function (response) {                    
-                            return response;
+    //                 let paramStr=`msmemberid=${msMember.data.member.id}&authemail=${msMember.data.member.auth.email}&firstname=${data.firstname}&lastname=${data.lastname}&datecreate=${msMember.data.member.createdAt}`;                
+    //                 const member=await axios(`/.netlify/functions/member-create?${paramStr}`)
+    //                     .then(function (response) {                    
+    //                         return response;
                             
-                        })
-                        .catch(function (error) {
-                            api.logError(error.statusCode, error.message, msMember.data.member.id);
-                            return {
-                                statusCode: 422,
-                                body: `Error: ${error}`
-                            }
-                        });
+    //                     })
+    //                     .catch(function (error) {
+    //                         api.logError(error.statusCode, error.message, msMember.data.member.id);
+    //                         return {
+    //                             statusCode: 422,
+    //                             body: `Error: ${error}`
+    //                         }
+    //                     });
                     
-                    let session;
-                    if(member.data){
-                        session=await api.createUserSession(member.data.data[0].msmemberid, '', member.data.data[0].datecreated);
-                    }                    
+    //                 let session;
+    //                 if(member.data){
+    //                     session=await api.createUserSession(member.data.data[0].msmemberid, '', member.data.data[0].datecreated);
+    //                 }                    
 
-                    if(!session.data) {
-                        api.logError(session.statusCode, session.body, 'Could not create user session', msMember.data.member.id);
-                        setErrorMessage('Something went wrong. The error has been logged and will be reviewed.')
-                    }
-                    else {
-                        localStorage.setItem('__sak:session', session.data.data[0].sessionid);
+    //                 if(!session.data) {
+    //                     api.logError(session.statusCode, session.body, 'Could not create user session', msMember.data.member.id);
+    //                     setErrorMessage('Something went wrong. The error has been logged and will be reviewed.')
+    //                 }
+    //                 else {
+    //                     localStorage.setItem('__sak:session', session.data.data[0].sessionid);
 
-                        await memberstack.purchasePlansWithCheckout({
-                            priceId: prices[0].id
-                            , cancelUrl: "/"
-                            , successUrl: "/"
-                            , autoRedirect: true,
-                        })
-                    }                                      
-                }
-            }            
-        } catch(err) {
-            setErrorMessage(err.message);
+    //                     await memberstack.purchasePlansWithCheckout({
+    //                         priceId: prices[0].id
+    //                         , cancelUrl: "/"
+    //                         , successUrl: "/"
+    //                         , autoRedirect: true,
+    //                     })
+    //                 }                                      
+    //             }
+    //         }            
+    //     } catch(err) {
+    //         setErrorMessage(err.message);
 
-            if(err) {
-                errors = true;
-            }
+    //         if(err) {
+    //             errors = true;
+    //         }
 
-            if(!errors)
-                props.handleDialogClose();
+    //         if(!errors)
+    //             props.handleDialogClose();
             
-        }
+    //     }
 
-        form.restart();
-    };
+    //     form.restart();
+    // };
 
-    const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
-    const getFormErrorMessage = (meta) => {
-        return isFormFieldValid(meta) && <small className="p-error">{meta.error}</small>;
-    };
+    // const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
+    // const getFormErrorMessage = (meta) => {
+    //     return isFormFieldValid(meta) && <small className="p-error">{meta.error}</small>;
+    // };
 
     const passwordHeader = <h6>{``}</h6>;
     const passwordFooter = (
@@ -156,145 +156,7 @@ const SignupForm = (props) => {
 
     return (
         <div>
-            <Form 
-                onSubmit={onSubmit} 
-                initialValues={{ 
-                    firstname: (customFields && customFields.firstname) ?? localStorage.getItem('__sak_regform_firstname') ?? '', 
-                    lastname: (customFields && customFields.lastname) ?? localStorage.getItem('__sak_regform_lastname') ?? '',  
-                    email: (member && member.auth.email) ?? localStorage.getItem('__sak_regform_email') ?? '', 
-                    password: '', 
-                    price: prices[0].id, 
-                    accept: false 
-                }} 
-                validate={validate} 
-                render={({ handleSubmit }) => (
-                    <form onSubmit={handleSubmit} className={`${formMode}-mode p-fluid pt-4`}>
-                        <div className={`form-message`}>&nbsp;
-                            <div className={`${!errorMessage ? 'hidden' : 'ms-response-error'}`}>{errorMessage}&nbsp;</div>
-                            <div className={`${formMode==='review' && !errorMessage ? 'review-message' : 'hidden'}`}>Please review and submit the form to create your membership.</div>
-                        </div>
-
-                        <div className={`field fle-x gap-3 ${formMode==='review' ? 'mt-4' :''}`}>
-                            <Field name="firstname" render={({ input, meta }) => (
-                                <div className="field">
-                                    <span className="p-input-icon-right">
-                                        <i className="pi pi-user" />
-                                        <label htmlFor="firstname" className={classNames({ 'p-error': isFormFieldValid(meta) })}>First Name: <span className='asterisk'>*</span></label>
-                                        <InputText 
-                                            id="firstname" 
-                                            {...input} 
-                                            autoFocus = { true }
-                                            disabled  = {member && planConnections>0}
-                                            readOnly={formMode==='review'}
-                                            className={classNames({ 'p-invalid': isFormFieldValid(meta) })}
-                                            name='firstname'
-                                        />
-                                    </span>
-                                    <div className={`form-error-container`}>{ getFormErrorMessage(meta)}</div>
-                                </div>
-                            )} />
-                            <Field name="lastname" render={({ input, meta }) => (
-                                <div className="field">
-                                    <span className="p-input-icon-right">
-                                        <i className="pi pi-user" />
-                                        <label htmlFor="lastName" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Last Name: <span className='asterisk'>*</span></label>
-                                        <InputText 
-                                            id="lastname" 
-                                            {...input}
-                                            disabled  = {member && planConnections>0}
-                                            readOnly={formMode==='review'}
-                                            className={classNames({ 'p-invalid': isFormFieldValid(meta) })} 
-                                            data-ms-member='lastname'
-                                        />
-                                    </span>
-                                    <div className={`form-error-container`}>{ getFormErrorMessage(meta)}</div>
-                                </div>
-                            )} />
-                        </div>
-                        <div className="field fle-x gap--3">
-                            <Field name="email" 
-                                render={({ input, meta }) => (
-                                <div className="field">
-                                    <span className="p-input-icon-right">
-                                        <i className="pi pi-envelope" />
-                                        <label htmlFor="email" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Email: <span className='asterisk'>*</span></label>
-                                        <InputText 
-                                            id="email" 
-                                            {...input}
-                                            disabled  = {member && planConnections>0}
-                                            readOnly={formMode==='review'}
-                                            className={classNames({ 'p-invalid': isFormFieldValid(meta) })} 
-                                        />
-                                        
-                                    </span>
-                                    <div className={`form-error-container`}>{ getFormErrorMessage(meta)}</div>
-                                </div>
-                            )} />
-                            <Field name="password" 
-                                render={({ input, meta }) => (
-                                <div className="field">
-                                    <span className="p-input-icon-right">
-                                        <i className="pi">&nbsp;</i>
-                                        <label htmlFor="password" className={classNames({ 'p-error': isFormFieldValid(meta) })}>Password: <span className='asterisk'>*</span></label>
-                                        <Password 
-                                            id="password" 
-                                            {...input}
-                                            //autoFocus = { customFields && customFields.firstname ? true : false }
-                                            toggleMask = { !member || planConnections===0 }
-                                            disabled = { member && planConnections>0 }
-                                            readOnly = {formMode==='review'}
-                                            className={classNames({ 'p-invalid': isFormFieldValid(meta) })} 
-                                            header={passwordHeader} 
-                                            footer={passwordFooter}                                            
-                                        />                                        
-                                    </span>
-                                    <div className={`form-error-container`}>{ getFormErrorMessage(meta)}</div>
-                                </div>
-                            )} />
-                        </div>                            
-                       
-                        <Field name="accept" type="checkbox" render={({ input, meta }) => (
-                            <div className="field-checkbox">
-                                <Checkbox 
-                                    inputId="accept" 
-                                    {...input} 
-                                    className={classNames({ 'p-invalid': isFormFieldValid(meta) })}
-                                    disabled = {formMode==='review'}
-                                />
-                                <label 
-                                    htmlFor="accept" 
-                                    className={classNames({ 'p-error': isFormFieldValid(meta) })}>
-                                        I have read and agree to the terms and conditions *
-                                </label>
-                            </div>
-                        )} />
-                        <div>
-                            &nbsp;
-                        </div>
-                        <div className={`faux-form-footer`}>
-                            <Button 
-                                type="button" 
-                                label="Back" 
-                                onClick={(e) => setFormMode('edit')} 
-                                className="sak-button sak-button--alt sak-button-back sak-button-med mt-0 p-button--secondary"
-                                disabled = {false}
-                            />
-                            &nbsp;&nbsp;
-                            <Button 
-                                type="button" 
-                                label={props.member && props.member.auth.email ? "Close" : "Cancel"} 
-                                onClick={(e) => props.handleDialogClose(e)} 
-                                className="sak-button sak-button--alt sak-button-med mt-0 p-button--secondary" 
-                            />   
-                            <Button 
-                                type="submit" 
-                                label={formMode==='edit' ? "Review" : "Create Membership"} 
-                                className="sak-button sak-button-med mt-0 p-button-primary" 
-                                disabled = {(planConnections && props.member.planConnections>1) || errorMessage ? true : false}
-                            />
-                        </div>                        
-                    </form>
-            )} />
+            
         </div>
     );
   }
