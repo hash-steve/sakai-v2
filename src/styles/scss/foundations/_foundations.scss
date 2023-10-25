@@ -1,0 +1,38 @@
+
+.foundations {
+    h3 {
+        font-size: 1.4rem;
+        padding-bottom: 5px;
+    }
+    // height: calc(82.5vh - (.1vh));
+        div.p-carousel-content, 
+        .p-carousel-container,
+        .p-carousel-items-container,
+        .p-editor-container {
+            height: 100%;
+            border-radius: $border-radius;
+        }
+        .foundations-editor {
+            .ql-editor {
+                height: 100%;
+                margin: 0 auto;
+                background: #282936;
+                .ql-video + p { display: none !important;}
+                .ql-video {
+                    margin: 0 auto;
+                    width: 100%;
+                    height: calc(95% - (1%));                   
+                }
+                h3 {
+                  +p:first-of-type {display: none}  
+                }
+            }
+        }
+        .doc object, doc.embed {
+            width: 100%;
+            height: 70vh;
+        }    
+    }
+
+
+

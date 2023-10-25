@@ -1,0 +1,223 @@
+.dashboard  {
+    .p-datatable {
+        input {
+            padding: 2px;  
+        }
+    }   
+}
+.dashboard .map h5 + div > div {
+    height: 96% !important;
+    border-radius: 6px;
+}
+.dashboard div.map > div > div > div:nth-child(2) {
+    display: hidden !important;
+}
+
+.tps {
+    .p-knob {
+        text-align: center;
+        svg {
+            // height: 25vh !important;
+            
+            path {
+                stroke: $util-tool-color;
+            }
+            path+path {
+                stroke: $network-accent;
+            }
+        }
+    }
+}
+
+//REPLACE(source, old_text, new_text );
+
+.dashboard {
+    .timeframe {
+        >.p-button {
+            padding: 0;
+            border:unset !important;
+        }
+    }
+    z-index: 999;
+    position: relative;
+    margin-top: 0px !important;
+    .p-datatable {
+        border: 0;
+        .p-datatable-thead {
+            tr[role="row"] {
+                line-height: unset;
+                th {
+                    padding: 0.5rem 0.75rem;
+                    .p-column-header-content {
+                        justify-content: center;
+                        .p-column-title {
+                            font-size: 1.1em;
+                            font-weight: 500;
+                        }
+                    }                    
+                }
+            }
+        }
+        .p-datatable-tbody {
+            tr {                
+                td[role="cell"] {
+                    font-size: 1.1em;
+                    text-align: center;
+                    padding: 0.1rem;
+                    line-height: 26px;
+                    .p-inputtext {
+                        text-align: center !important;
+                        border:0;
+                        background: transparent;
+                    }
+                }                
+            }
+        }
+    }
+    .vert-filler {
+        height: 30px;
+    }
+
+    section {        
+        border-radius: 12px;
+        border:1px solid $section-border;
+        background: $section;
+        padding: 10px 0;
+        width: 99%;
+        margin: 0 0 20px 10px;
+    }
+    .grid {
+        margin-right: 0;
+        margin-left: 0;
+        > div {
+            padding: .75rem;
+            min-width: 365px;
+        }
+    }
+    .p-toolbar {
+        padding: 12.5px 10px;
+    }
+    .p-toolbar-group-right{
+        border: 0px solid lime;
+        width: 27%;
+    }
+    .p-toolbar-group-center{
+        border: 0px solid gold;
+        width: 72%;
+        justify-content: right;
+    }
+    .p-toolbar-group-left {
+        border: 0px solid red;
+        width: 0;
+        min-width:0;
+    }
+    .card {
+        background: $surface-5;
+        border-radius: 12px;
+        .title {
+            color: $text-color;            
+            font-size: 1.25em;
+            font-weight: 500 !important;
+            padding: 5px 0 7.5px 0;
+            margin-bottom: 5px;
+        }
+        label:first-of-type {
+            color: $text-color;
+            font-size: 1.2em;
+        }
+        .p-scrollpanel-content {
+            overflow: hidden;
+        }
+        
+        .last-staking-period {
+            .p-scrollpanel-content {
+                padding-bottom: 0px;
+            }
+        }
+        .items {        
+            overflow: hidden;
+            white-space:nowrap;
+            .item {
+                line-height: 1.88em;
+                line-height: 1.88em;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                input {
+                    width: 100%;
+                    border:0;
+                    text-align:right;
+                    background:$surface-5;
+                    font-size: 1.15em;
+                }
+            }
+            ul {
+                padding-left: 20px;
+                li {
+                    position: relative;
+                    left: 0px;
+                    width: 100%;
+                }
+            }
+            label.child {
+                padding-left:20px;
+            }
+        }
+
+        .accent {
+            padding-left: 15px;
+            border-left: 4px solid;
+        }
+        .p-chart {
+            height: 198px;
+        }
+        .network {
+            border-left-color: $network-accent;        
+        }
+        .staking {
+            border-left-color: $staking-accent;
+        }
+        .distribution {
+            border-left-color: $distribution-accent;
+        }
+        .nodes {
+            border-left-color: $nodes-accent;
+        }
+    }
+    .chart,
+    .chart .card {
+        height: 100%;
+    }
+
+    .txns-wrapper {
+        width: 100%;
+        border: 0px solid red;
+        white-space:nowrap;
+        padding: 21% 0;
+
+        .p-inputnumber {
+            border: 0px solid red;
+            width:100%;
+            
+        }
+        .p-inputnumber-input {
+            font-family:'Jost' !important;
+        }
+        .p-inputnumber-input {
+            font-size: 2.9vw;
+            border: 0;
+            width: 100%;
+            padding: 0;
+        }
+        .p-inputtext.loading {
+            width:305px;
+            border: 0;
+            padding:17.5px 0;
+        }
+        span {
+            font-weight:300 !important;
+        }       
+    }
+}

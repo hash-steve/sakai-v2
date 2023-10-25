@@ -1,0 +1,37 @@
+.p-password-panel {
+    background: $input-bg-color;
+    border: $border;
+}
+.p-panel .p-panel-header {
+    border: $border;
+    padding: 1rem;
+    background: transparent;
+    color: $text-color;
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+}
+.p-panel-title {
+    font-weight: 600 !important;
+    font-size: 1.2em;
+}
+.p-panel-content {
+    background: transparent  !important;
+    border: $border !important;
+    border-top: 0 !important;
+}
+.p-scrollpanel .p-scrollpanel-bar {
+    background: $util-tool-color;
+    border: 0 none;
+}
+
+.p-card,
+.card {
+    background: $surface-10;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: $surface-10-box-shadow;
+    border-radius: $border-radius;
+    &:last-child {
+        margin-bottom: 0;
+    }    
+}

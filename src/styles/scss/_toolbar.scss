@@ -1,0 +1,24 @@
+.p-toolbar {
+    background: transparent;
+    border: 0;
+    padding: 15px 7.5px;
+    flex-wrap: nowrap !important;
+}
+
+.p-toolbar-group-left {
+    width: 33%;
+    min-width: 390px;
+    justify-content: left;
+    border: 0px solid purple;
+}
+.p-toolbar-group-center {
+    width: 33%;
+    min-width: 200px;
+    justify-content: center;
+    border: 0px solid gold;
+}
+.p-toolbar-group-right {
+    justify-content: right;
+    width: 33%;
+    border: 0px solid red;
+}

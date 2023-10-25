@@ -1,0 +1,120 @@
+
+.p-dialog {
+    border: $border;
+}
+.p-dialog,
+.p-dialog .p-dialog-header {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    border-bottom: $surface-20-border;
+    button:focus {
+        border: 0;
+        box-shadow: none !important;
+    }
+}
+
+.p-dialog,
+.p-dialog .p-dialog-footer {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    border-top: $surface-20-border;
+}
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content,
+.p-dialog .p-dialog-footer { 
+    background: $surface-20;
+    .p-button {
+        background: $surface-20-button !important;
+        border: $surface-20-border !important;
+    }
+}
+.p-dialog .p-dialog-content > div {
+    padding-top: 10px;
+}
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-footer { 
+    padding: .75rem;
+}
+.p-dialog .p-dialog-header .p-dialog-title {
+    font-weight: 600 !important;
+    font-size: 1.4rem;
+}
+.p-dialog-content .field {
+    width: 100%;
+}
+
+.sak-dialog {
+    .p-dialog-title {
+        font-weight: normal !important;
+    }
+    .p-dialog-content{
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    }
+}
+.sak-dialog-sm { 
+    width: 30vw;
+    font-size:1.1em;
+    .p-confirm-dialog-icon {
+        font-size: 3em !important;
+    }
+    .sak-button {
+        font-size: 1em;
+    }
+}
+.sak-dialog-med {
+    .p-dialog-title {
+        font-size: 1.1em !important;
+    }
+    width: 35vw;
+    font-size:1.1em;
+    .p-confirm-dialog-icon {
+        font-size: 3.5em !important;
+    }
+    .sak-button {
+        font-size: 1em;
+    }
+}
+.sak-dialog-lg { 
+    width: 50vw;
+    font-size:1.25em;
+    .p-dialog-title {
+        font-size: 1.25em !important;
+    }
+    .p-confirm-dialog-icon {
+        font-size: 3em !important;
+    }
+    .sak-button {
+        font-size: 1em;
+    }
+}
+.sak-dialog-xlg { 
+    width: 50vw;
+    font-size:1.35em !important;
+    .p-dialog-title {
+        font-size:1.25em !important;
+    }
+    .p-confirm-dialog-icon {
+        font-size: 2.5em !important;
+    }
+    .sak-button {
+        font-size: .9em;
+    }
+}
+.sak-confirm-dialog .pi.pi-check-circle{
+    color: lawngreen;
+}
+.p-confirm-dialog-icon.pi.pi-exclamation-circle {
+    color: $error-color;
+}
+
+.p-confirm-dialog {
+    width: 25%;
+    .p-dialog-content {
+        padding-top: 25px;
+    }
+}
+.confirm-delete {
+    .p-confirm-dialog-icon {
+        color: $warning-color;
+    }
+}

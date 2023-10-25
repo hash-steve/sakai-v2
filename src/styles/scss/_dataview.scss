@@ -1,0 +1,14 @@
+.p-dataview-content  {
+    background: transparent !important;
+    min-height: 25px;
+}
+.p-dataview.p-dataview-list .p-dataview-content > .p-grid > div {
+    border: $border;
+}
+.p-datatable .p-datatable-thead > tr > th, .p-treetable .p-treetable-thead > tr > th, .p-paginator {
+    border: 0px solid $table-border;
+}
+.p-dataview .p-paginator-bottom {
+    border-width: 0 0 0 0;
+    border-radius: 0;
+}

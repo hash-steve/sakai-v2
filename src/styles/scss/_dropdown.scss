@@ -1,0 +1,9 @@
+
+.p-dropdown-item-group {
+    background: $surface-20 !important;
+    font-weight: 500 !important;
+    font-size: 1.075em
+}
+.p-dropdown-item-group ~ .p-dropdown-item {
+    padding-left: 20px !important;
+}

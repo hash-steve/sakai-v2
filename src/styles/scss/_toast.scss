@@ -1,0 +1,59 @@
+.p-toast {
+    top:unset;
+    bottom: 20px !important;
+    right: 20px !important;
+    opacity:1;
+}
+
+.p-toast .p-toast-message .p-toast-icon-close:hover {
+    background: unset;
+}
+.p-toast .p-toast-message.p-toast-message {
+    background: $surface-10;
+    border: 1px solid $surface-20-border-color;
+    border-radius: 2px;
+    box-shadow: $surface-10-box-shadow
+}
+.p-toast .p-toast-message.p-toast-message,
+.p-toast-icon-close-icon .pi .pi-times {
+    color: #e2e2e2 !important;
+}
+
+.p-toast-message-info {
+    border-left: 6px solid $cornflower !important;
+    .p-toast-message-icon, .p-toast-icon-close {
+        color: $cornflower !important;
+    }
+}
+
+.p-toast-message-success {
+    border-left: 6px solid $success-color !important;
+    .p-toast-message-icon, .p-toast-icon-close {
+        color: $success-color !important;
+    }
+}
+
+.p-toast-message-warning {
+    border-left: 6px solid $warning-color !important;
+    .p-toast-message-icon, .p-toast-icon-close {
+        color: $warning-color
+    }
+}
+
+.p-toast-message-error {
+    border-left: 6px solid $error-color !important;
+    .p-toast-message-icon, .p-toast-icon-close {
+        color: $error-color !important;
+    }
+}
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon, 
+.p-toast .p-toast-message.p-toast-message-info .p-toast-icon-close {
+    color: #eee;
+}
+.p-toast-message-text {
+    text-align: left;
+}
+.p-toast-summary {
+    font-size: 1.1em !important;
+    font-weight: 500 !important;
+}

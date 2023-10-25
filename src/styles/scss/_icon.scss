@@ -1,0 +1,141 @@
+
+.icon {
+    height: 20px;
+    width: 20px;
+}
+.icon.primary {
+    background: $icon-color !important;
+}
+.primary + i {
+    color: $icon-color;
+}
+.icon.icon-logo {
+    mask-image: url(./../images/layout-skew-grid.svg);    
+    background: $app-icon-color;
+    margin-right: 0;
+    width: 40px;
+    height: 40px;  
+}
+.filter-green{
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+}
+.icon.icon-login {
+    mask-image: url(./../images/log-in.svg);    
+}
+.icon.icon-dashboard {
+    mask-image: url(./../images/heat-grid.svg);           
+}
+.icon.icon-members {
+    mask-image: url(./../images/people.svg);    
+}
+.icon.icon-use-cases {
+    mask-image: url(./../images/folder-open.svg);     
+}
+.icon.icon-analytics {
+    mask-image: url(./../images/grouped-bar-chart.svg);    
+}
+.icon.icon-blog {
+    mask-image: url(./../images/manually-entered-data.svg);     
+}
+.icon.icon-profile {
+    mask-image: url(./../images/user.svg);     
+}
+.icon.icon-admin {
+    mask-image: url(./../images/cog.svg);     
+}
+.icon.icon-govcouncil {
+    mask-image: url(./../images/third-party.svg);     
+}
+.icon.icon-forum {
+    mask-image: url(./../images/comment.svg);     
+}
+.icon.icon-hns {
+    mask-image: url(./../images/at.svg);     
+}
+.icon.icon-membersvcs {
+    mask-image: url(./../images/clipboard.svg);     
+}
+.icon.icon-foundations {
+    mask-image: url(./../images/cube.svg);     
+}
+.icon.icon-database {
+    mask-image: url(./../images/database.svg);
+}
+.icon.icon-model {
+    mask-image: url(./../images/array-numeric.svg);
+}
+.icon.icon-calculator {
+    mask-image: url(./../images/calculator.svg);
+}
+.icon.icon-warning {
+    mask-image: url(./../images/warning-sign.svg);
+}
+.icon.icon-pulse {
+    mask-image: url(./../images/pulse.svg);
+}
+.icon.icon-notifications {
+    mask-image: url(./../images/notifications.svg);
+}
+.icon-map-marker {
+    mask-image: url(./../images/map-marker.svg);
+    //M9.98 0c-3.87 0-7 2.98-7 6.67 0 3.68 7 13.33 7 13.33s7-9.65 7-13.33c0-3.68-3.14-6.67-7-6.67zm0 10c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z
+}
+.icon.icon-tick {
+    mask-image: url(./../images/tick.svg);
+    background: $success-color;
+    margin-right: 10px;
+    position: relative;
+    top:3px;
+}
+.icon.icon-document-open {
+    mask-image: url(./../images/document-open.svg);
+    background: #fff; 
+}
+.icon.icon-exclamation {
+    mask-image: url(./../images/exclamation.svg);
+    background: #fff; 
+}
+.icon-nav + a {
+    margin-left: 15px;
+}
+.icon.icon-lp {
+    mask-image: url(./../images/grouped-bar-chart.svg);
+    background: #ffffff;
+    mask-repeat: no-repeat;
+    height: 50%;
+}
+.icon.selected {
+    background: $primary-color;
+    + a.selected {
+        color: $primary-color;
+    }
+}
+.icon.icon-trending-up {
+    mask-image: url(./../images/layout-auto.svg);
+    mask-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    background: $primary-color;
+    position: relative;
+    line-height: 300px;
+    margin: 0 auto;
+    
+}
+.pi.success {
+    color: lawngreen;
+}
+.pi.warning {
+    color: orange;
+}
+.pi.info {
+    color: $primary-color
+}
+svg circle:not(svg .map) {
+    fill: transparent !important;
+}
+.substack-watermark {
+    mask-image: url('./../images/logos/substack_wordmark.png');
+    width: 68px;
+    height: 16px;
+    // padding: 10rem 0 0 0;
+}

@@ -1,0 +1,46 @@
+.key-anim10 {
+    -webkit-animation: Drawpath 1s linear forwards;
+    animation: Drawpath 1s linear forwards;
+    stroke-dasharray: 0,100;
+  }
+  .key-anim20 {
+    -webkit-animation: Drawpath 1s linear 1s forwards;
+    animation: Drawpath 1s linear 1s forwards;
+    stroke-dasharray: 0,100;
+  }
+  .key-anim30 {
+    -webkit-animation: Drawpath 1s linear 2s forwards;
+    animation: Drawpath 1s linear 2s forwards;
+    stroke-dasharray: 0,100;
+  }
+  .key-anim40 {
+    -webkit-animation: Drawpath 1s linear 2s forwards;
+    animation: Drawpath 1s linear 2s forwards;
+    stroke-dasharray: 0,100;
+  }
+  .key-anim50 {
+    -webkit-animation: Drawpath 1s linear 2s forwards;
+    animation: Drawpath 1s linear 2s forwards;
+    stroke-dasharray: 0,100;
+  }
+  .key-anim60 {
+    -webkit-animation: Drawpath 1s linear 2s forwards;
+    animation: Drawpath 1s linear 2s forwards;
+    stroke-dasharray: 0,100;
+  }
+  @-webkit-keyframes Drawpath {
+    from {
+      stroke-dasharray: 0,100;
+    }
+    to {
+      stroke-dasharray: 100,100;
+    }
+  }
+  @keyframes Drawpath {
+    from {
+      stroke-dasharray: 0,100;
+    }
+    to {
+      stroke-dasharray: 100,100;
+    }
+  }

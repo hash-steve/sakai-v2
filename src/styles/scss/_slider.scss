@@ -1,0 +1,22 @@
+.p-slider {
+    background: $accent;
+    .p-slider-range {
+        background: $accent;
+    }
+    .p-slider-handle {
+        background: $accent-offset;
+        border: 2px solid $accent;
+    }
+    .p-slider-handle-active {
+        background: $accent;
+    }
+}
+.p-slider:not(.p-disabled) .p-slider-handle:hover {
+    background: $accent;
+    border-color: $accent;
+}
+.p-slider .p-slider-handle:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 1px $accent;
+}

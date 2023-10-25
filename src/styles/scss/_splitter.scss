@@ -1,0 +1,18 @@
+.p-splitter {
+    border: unset;
+    background: unset;
+    height: unset !important;
+    .p-splitter-panel {
+        width:100%;
+        >div{
+            width:100%;
+            display:flex;
+            justify-content:center;
+        }
+        .p-splitter-gutter {
+            .p-splitter-gutter-handle {
+                background: $primary-color;
+            }
+        }
+    }    
+}

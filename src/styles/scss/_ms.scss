@@ -1,0 +1,186 @@
+main#msOverlay {
+    overflow: hidden !important;
+}
+
+.ms-modal {
+    background: $surface-10 !important;
+    border-radius: $border-radius !important;
+    box-shadow: 2px 2px 12px #0000001a !important;
+    color: $text-color !important;
+    border: $border !important;
+    label {
+        font-weight: 500 !important;
+    }
+    .ms-modal__figure {
+        display: none;
+    }
+    .ms-modal__title {
+        font-weight: normal;
+        color: $text-color;
+    }
+    .ms-modal__close {
+        top: 11px !important;
+        button:hover {
+        color: $primary-color;
+        }
+    }
+    .ms-modal__text {
+        color: $text-color;
+    }
+    .ms-modal__header {
+        color: $text-color;
+    }
+    .ms-modal__content-left {
+        border-right: 1px solid $border-color;
+    }
+    .ms-modal__content--profile {
+        border-top: 1px solid $border-color;
+        > div {
+            button:last-of-type {
+                display: none;
+            }
+        }
+    }
+    .ms-modal__save-button {
+        background: #2e303e !important;
+        color: $text-color !important;
+        font-weight: 500;
+        border: 1px solid #43455a !important;
+        padding: 5px 20px;
+        cursor: pointer;
+        :hover {
+            color: $primary-color !important;
+        }
+    }    
+}
+.ms-modal--profile {
+    .ms-modal__save-button {
+        bottom: 10px;
+        position: absolute;
+        left: 82.5%;
+    }
+}
+.ms-form {
+    .ms-form__label,
+    .ms-form__button--text {
+        color: $text-color !important;
+        font-weight: normal !important;
+        font-size: 1.25em
+    }
+    .ms-form__button:hover {
+        color: $primary-color;
+    }
+    .ms-form__button{
+        background: transparent !important;
+        color: $text-color;
+        box-shadow: none;
+        font-size: 1.2em;
+        font-weight: 500;
+        border: 0 !important;
+        max-height: 32px;        
+    }
+    .ms-form__button[type='submit'] {
+        border: 1px solid lighten($surface-20-border-color, 3%) !important;
+        margin: 0 auto;
+        width: 50%;
+        :hover {
+            background: darken(#1f2d40, 5%) !important;
+        }
+    }
+    .ms-form__input,
+    .ms-form__input:focus-visible,
+    .ms-form__input--password {
+        font-family: var(--font-family);
+        font-size: 1.25rem;
+        color: $text-color;
+        background: $input-bg-color;
+        padding: 0.5rem;
+        // transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+        appearance: none;
+        border-radius: 3px;
+        border: 1px solid lighten($surface-20-border-color, 3%) !important;
+    }
+    .ms-form__button--text {
+        font-size:.85em;
+    }
+    .ms-form__password-container { border: 0; }
+    .ms-form__password-container:focus-within {
+        border: 0 !important;
+        outline: 0 !important;
+        input {
+            border: $border;
+        }
+    }
+    .ms-form__eye,
+    .ms-form__eye-slash,
+    .ms-form__link {
+        color: $text-color !important;
+    }
+    .ms-modal__custom-field-container {
+        .ms-form__input {
+            border: 0;
+            background: transparent;
+        }
+    }
+}
+.ms-modal__footer {
+    display: none !important;
+    border-bottom-left-radius: $border-radius !important;
+    border-bottom-right-radius: $border-radius !important;
+    border-top: 0 !important;
+}
+.ms-error-message {
+    bottom: 75% !important;
+    background: $surface-20 !important;
+    #ms-status-icon svg path {
+        fill: #c3464e  !important;
+    }
+}
+.ms-form__error {
+    font-size: 15px !important;
+    color: $error-color !important;
+    svg {
+        width: 13px !important;
+        height: 13px !important;
+    }
+}
+.ms-modal__outline-button{
+    background: #2e303e !important;
+    color: #6b9fff !important;
+    font-weight: 100 !important;
+    border: 1px solid #43455a !important;
+    padding: 8px 20px !important;
+    cursor: pointer;
+}
+.ms-response-error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+.form-message {    
+    line-height: 20px;
+    position: relative;
+    top: -25px;
+    max-height: 20px;
+    min-height: 20px;
+}
+
+.ms-modal__profile-option:hover,
+.ms-modal__profile-option--active {
+    color: $primary-color !important;
+}
+.ms-modal__content-left {
+    button {
+        color: $text-color !important;
+    }
+}
+.ms-modal__outline-button,
+.ms-modal__regular-button {
+    font-weight: 500 !important;
+    border: $border !important;
+    color: $text-color !important;
+}
+.ms-modal__regular-button {
+    background: $button-bg-color !important;
+}

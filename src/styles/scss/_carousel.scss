@@ -1,0 +1,13 @@
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+    background: $primary-color;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator button {
+    background: lighten($surface-10, 30%);
+}
+.p-carousel .p-carousel-content .p-carousel-prev:focus, 
+.p-carousel .p-carousel-content .p-carousel-next:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    box-shadow: 0 0 0 0 !important;
+}

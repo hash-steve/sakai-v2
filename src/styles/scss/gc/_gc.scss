@@ -1,0 +1,293 @@
+.gc {
+    margin: 0 auto;
+    border: 0px solid skyblue;
+    .p-splitter {
+        border: $surface-10-border;
+        background: $surface-10;
+    }
+    .p-splitter-gutter {
+        width: .5px !important;
+        border: 1px solid $primary-color !important;
+        margin: 9% 0;
+    }
+    .bio {
+        .ql-editor {
+            height: calc(72vh);
+            width: 100%;
+            padding: 50px;
+            background: $surface-10 !important;
+            font-size: 1em;
+            overflow: auto;
+            resize: none;
+            border: 0;
+            :enabled:hover {
+                background: $surface-10  !important;
+            }
+        }
+    }  
+    .p-splitter-horizontal > .p-splitter-gutter {
+        cursor: initial;
+    }
+    .p-splitter-gutter-handle {
+        display: none;
+    }
+}
+
+/*  ---- governing council member's company logos ------  */
+.gc-profile {
+    list-style-type: none;
+    padding: 40% 0;
+    li:nth-child(1) {
+        padding-bottom:10px;
+    }
+    li:nth-child(2) {
+        position: relative;
+        top: -10px;
+    }
+}
+.gc-text {
+    line-height: 1.5em;
+    font-size: 1.25em;
+}
+
+.gc-logo{
+    display:inline-block;
+    width: 100%;
+    height: 85px;
+    border: 0px solid purple;
+    background-repeat: no-repeat !important;
+    background-position-x: 50%;
+    background-position-y: 90%;
+  }
+
+.abrdn {
+    background-image: url(./../../images/logos/abrdn.png);
+    background-size: 30%; 
+}
+.avery-dennison {
+    background-image: url(./../../images/logos/avery-dennison.png);
+    background-size: 35%;
+}
+.boeing {
+    background-image: url(./../../images/logos/boeing.png);    
+}
+.chainlink {
+    background-image: url(./../../images/logos/chainlink.png);
+}
+.cofra {
+    background-image: url(./../../images/logos/cofra.png);
+    background-size: 20%;
+}
+.dbs {
+    background-image: url(./../../images/logos/dbs.png);
+    background-size: 35%;
+}
+.dell {
+    background-image: url(./../../images/logos/dell.png);   
+    background-size: 35%;
+  
+}
+.dentons {
+    background-image: url(./../../images/logos/dentons.png);
+    background-size: 35%;
+
+}
+.deutsche-telekom {
+    background-image: url(./../../images/logos/deutsche-telekom.png);
+    background-size: 35%;
+
+}
+.dla-piper {
+    background-image: url(./../../images/logos/dla-piper.png);
+    background-size: 22.5%;
+}
+.edf {
+    background-image: url(./../../images/logos/edf.png);
+
+}
+.eftpos {
+    background-image: url(./../../images/logos/eftpos.png);
+}
+.fis {
+    background-image: url(./../../images/logos/fis.png); 
+    background-size: 40%; 
+}
+.google {
+    background-image: url(./../../images/logos/google.png);
+    background-size: 32.5%;  
+}
+.ibm {
+    background-image: url(./../../images/logos/ibm.png);     
+}
+.iit-madras {
+    background-image: url(./../../images/logos/iit-madras.png);     
+}
+.lgcorp {
+    background-image: url(./../../images/logos/lg.png);          
+}
+.lse {
+    background-image: url(./../../images/logos/lse.png);
+}
+.magalu {
+    background-image: url(./../../images/logos/magalu.png);
+    background-size: 40%; 
+}
+.nomura {
+    background-image: url(./../../images/logos/nomura.png);
+    background-size: 35%;
+}
+.service-now {
+    background-image: url(./../../images/logos/service-now.png); 
+}
+.shihnan-bank {
+    background-image: url(./../../images/logos/shihnan-bank.png);
+    background-size: 35%;   
+}
+.standard-bank {
+    background-image: url(./../../images/logos/standard-bank.png);
+    background-size: 35%;
+}
+.swirlds {
+    background-image: url(./../../images/logos/swirlds.png);
+    background-size: 22.5%;
+}
+.tata {
+    background-image: url(./../../images/logos/tata.png);
+    background-size: 30%;
+}
+.ubisoft {
+    background-image: url(./../../images/logos/ubisoft.png); 
+    background-size: 25%;
+}
+.ucl {
+    background-image: url(./../../images/logos/ucl.png);
+    background-size: 30%;
+}
+.zain {
+    background-image: url(./../../images/logos/zain.png);    
+}
+.wipro {
+    background-image: url(./../../images/logos/wipro.png);
+    background-size: 30%;
+}
+.matrix {
+    table-layout: fixed;
+    height: 80vh;
+    width: 98%;
+    max-width: 99%;
+    border-collapse: collapse;
+    margin: 0 20px;
+    tbody {            
+        .row-0 {
+            font-size: 1.15em;
+            text-align: center;
+            background: transparent;
+            height: 50px;        
+        }
+        tr {
+            width: 100%;
+            border-top: 1px solid $table-border;            
+            :first-of-type {
+                border-left: 1px solid $table-border;
+                font-size: 1.15em;
+                background: transparent;
+                padding-left: 0px;
+                width: 8%;
+            }
+            td {
+                width: 10%;
+                border-right: 1px solid $table-border;
+                border-bottom: 1px solid $table-border;
+                text-align:center;
+                white-space: break-spaces;
+                vertical-align: middle;
+                padding: 2px;
+            }
+            .data-cell {
+                font-size: 1.25em;
+                line-height: 18px;
+            }
+        }
+        tr:first-of-type > td:last-of-type {
+            width:5%;
+        }
+        tr:last-of-type > td:last-of-type {
+            font-size: 1.25em;
+        }        
+        tr:not(.row-0) {
+            height: calc(100% / 7);
+        }
+        tr.table-row:last-of-type {
+            height: 50px;
+        }
+    }
+}
+
+.world-map {
+    border: 0px solid red;
+    max-height: 1000px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    .sphere:not(.faux-link), .countries:not(.faux-link) {
+        cursor:grab;
+    }
+    .graticule {
+        fill: none;
+        stroke: #626262;
+        stroke-width: .5px;
+        stroke-opacity: .5;
+      }
+      .sphere {
+        fill:transparent !important;    //#141e2e
+      }
+      .country {
+        fill: #879ccb;
+        stroke:#36384b
+      }
+      .marker {
+        stroke: red;
+      }
+   
+}
+.node-detail {
+    width: 100%;
+    margin: 25px;
+    border: 1px solid $table-border;
+    border-collapse: separate;
+    thead {
+        tr {
+            line-height: $table-row-line-height;            
+            background: $table-head-bg;
+            font-size:1.25em;
+            &:last-of-type {
+                td {
+                    padding-bottom:5px;
+                    border-bottom:1px solid $table-row-border;
+                }
+            }
+            td:last-child{
+                margin-bottom:10px;
+            }
+        }
+        tr.vertical-spacer {
+            line-height:10px;
+            border:0;
+        }
+    }
+    
+    tbody {
+        tr {
+            line-height: $table-row-line-height;
+            border-bottom:1px solid $table-row-border;
+            font-size:1.1em;
+            &:first-of-type{
+                border-top:1px solid $table-row-border;
+            }
+            td {
+                padding: 0 10px;                    
+            }              
+        }
+        
+    }
+}

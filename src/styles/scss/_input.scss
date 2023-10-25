@@ -1,0 +1,120 @@
+.p-checkbox .p-checkbox-box.p-highlight {
+    border: $border !important;
+    
+}
+.p-checkbox .p-checkbox-box {
+    border: 1px solid $border-color;
+    background: $input-bg-color;
+}
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus,
+.p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+    border-color: $primary-color !important;
+    box-shadow: none !important;
+}
+.p-dropdown:not(.p-dropdown.p-invalid) { 
+    border-color: $border-color !important;
+    background: $input-bg-color;
+}
+.p-dropdown:not(.p-disabled):hover {
+    border-color: $border-color !important;
+}
+.p-dropdown .p-inputtext {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.p-dropdown,
+.p-dropdown-panel {
+    background: $input-bg-color
+}
+.p-dropdown-panel {
+    border: $border;
+}
+.p-dropdown.p-focus {
+    box-shadow: none !important;
+}
+.p-dropdown-item.p-highlight {
+    background:  $input-bg-color !important;
+}
+.select-sm {
+    width: 25% !important;
+}
+.select-med {
+    width: 47.5% !important;
+}
+.select-lg {
+    width: 100% !important;
+}
+.readonly {
+    input:hover,input:focus {
+        background:transparent !important;
+    }
+}
+.p-inputtext,
+.p-inputtext:enabled:focus:not(.p-inputtextarea),
+.p-inputtext:enabled:hover:not(.p-inputtextarea) {
+    box-shadow: 0 0 0 0px $border-color !important;
+    border-color: $input-border-color !important;
+    background: $input-bg-color;
+}
+.p-input-icon-left > i:not(.p-password-input + i), 
+.p-input-icon-right > i:not(.p-password-input + i), 
+.p-input-icon-left > svg, 
+.p-input-icon-right > svg, 
+.p-input-icon-left > .p-input-prefix, 
+.p-input-icon-right > .p-input-suffix {
+    margin-top: 0.25rem;
+}
+.p-checkbox-box.p-highlight {
+    background: unset !important;
+}
+.p-checkbox-icon {
+    color: $primary-color !important;
+}
+.p-dropdown.p-invalid,
+.p-password.p-invalid input,
+.p-inputtext.p-invalid.p-component {
+    border-color: $error-color !important;
+}
+.input-number-disabled > input {
+    background: transparent !important;
+    border: 0;
+}
+form.edit-mode {
+    .p-inputtext {
+        height: 40px;
+        font-size: 17px;
+        border-radius: 4px;
+        padding: 10px 10px
+    }
+}
+form.review-mode {
+    // overflow: hidden;
+    .p-inputtext, .p-inputtext:enabled:focus, .p-inputtext:enabled:hover {
+        box-shadow: 0 0 0 0px transparent !important;
+        border-color: transparent !important;
+        background: transparent !important;
+        
+    }
+
+    i.pi,
+    .p-password-input+i{
+        display: none;
+    }
+    .asterisk {
+        display: none;
+    }
+
+    input#lastname,
+    input#firstname,
+    input#email,
+    input[type='password'] {
+        position: relative;
+        top: -32px;
+        left: 80px;
+        font-size: 1.175em;
+        width: 300px;
+    }
+    input[type='password'] {
+        margin-left: 120px;
+    }
+}

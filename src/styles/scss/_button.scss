@@ -1,0 +1,179 @@
+.sak-button, .p-button {
+    justify-content: center;
+    font-family: $font;
+}
+.sak-button-back {
+    float: left
+}
+.p-button {
+    border-radius: $border-radius;
+}
+.p-button {
+    white-space:nowrap;
+    .p-avatar {
+        margin-right: 10px
+    }
+}
+.sak-button, 
+.p-button {
+    background:$button-bg-color !important;
+    color: $text-color !important;
+    font-weight: 500;
+    border: 1px solid lighten($button-bg-color, 5%) !important;
+    padding: 7.5px 20px;
+    cursor: pointer;
+    :hover,
+    :enabled:active,
+    :enabled:hover {
+        color: $button-color-hover;
+        background: transparent !important;
+    }
+}
+.faux-form-footer .sak-button {
+    border: 1px solid lighten($border-color, 10%) !important;
+}
+.sak-button.primary {
+    color: $primary-color !important;
+    border: 1px solid $primary-color !important;
+}
+.sak-button-alt {
+    color: $primary-color !important;
+    background:$button-bg-color !important;
+    border: 0 !important;
+    box-shadow: 0 0 0 1px $button-box-shadow;
+}
+.sak-button-alt:hover {
+    color: lighten(#586070, 20%) !important;
+}
+.sak-button-sm {
+    height: 31px;
+}
+
+.sak-button-lg {
+     font-size: 1.15em;
+     padding: 5px 1.5rem;
+     min-width: 100px;
+}
+.sak-button-xlg {
+    font-size: 2em;
+    padding: 10px 1.5rem;
+    min-width: 100px;
+}
+.sak-button-bottom {
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 30px;
+}
+
+.sak-buttons-group > div {
+    white-space: nowrap;
+    
+}
+.p-button.p-component:not(.callout-button):hover {
+    span {
+        color: $primary-color
+    }
+
+}
+.p-button.p-button-text {
+    background-color: transparent;
+    color: $primary-color;
+}
+.p-button.p-button-text:enabled:hover, 
+.p-button.p-button-text:not(button):not(a):not(.p-disabled):hover {
+  background: #64b5f60a;
+  color: $button-color-hover !important;
+  border-color: transparent;
+}
+
+.p-splitbutton-menubutton {    
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    left: -1px
+}
+.p-button:focus {
+    box-shadow: none !important;
+}
+.p-splitbutton button:first-of-type {
+    font-size: 1.1em;
+    padding: 5px 1.5rem;
+    min-width: 100px;
+}
+.p-menuitem-link:focus {
+    box-shadow: none !important;
+}
+button.selected {
+   color: $selected-color !important;
+}
+.sak-button-xxlg {
+    
+    font-size: 1.655vw;
+    white-space: nowrap;
+}
+.faux-footer button{
+    width: 100px !important;
+}
+button.p-link:focus {
+    box-shadow: 0 0 0 1px $primary-color;
+}
+.p-carousel .p-carousel-indicators .p-carousel-indicator button:hover {
+    background: darken($primary-color, 10%);
+}
+.sak-button-group { 
+    white-space: nowrap;
+}
+.callout-link-button-text {
+    color: $callout-link-button-text;
+}
+.callout-button {
+    border-radius: 18px;
+    background: $callout-bg !important;
+    color: $callout-button-text-hover !important;
+    .p-button-label {
+        color: $callout-button-text;
+        font-weight: 600 !important;
+        font-size: 1.1em;
+    }
+    .p-button-label:hover {
+        color: $callout-button-text-hover !important;
+    }
+}
+.button-as-link {
+    //padding-left: 0 !important;
+    >div {
+        text-align: left;
+        > span {
+            font-size: 1.5rem !important;
+            margin-right: 0 !important;
+        }
+    }
+    button{
+        border: 0 !important;
+        background: transparent !important;
+        padding: 0 !important;
+        .p-button-label {
+            color: $primary-color;
+            font-size: 1.5rem !important;
+            position: relative;
+            left: -18px;
+            &:hover {
+                color: $primary-color !important;
+            }
+         }
+    }
+}
+.p-button-label {
+    transition-duration: unset !important;
+    font-weight: 500;
+    font-size: 1.115em;
+}
+.p-selectbutton {
+    display: flex;
+    flex-wrap: nowrap;
+    .p-focus {
+        color: $primary-color !important;
+    }
+    .p-highlight {
+        color: $primary-color !important;
+    }
+}

@@ -1,0 +1,185 @@
+@import 'primereact/resources/themes/vela-blue/theme.css';
+@import "primereact/resources/primereact.min.css";
+@import '/node_modules/primeflex/primeflex.css';
+@import 'primeicons/primeicons.css';
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400&family=Urbanist:wght@200;300;400&display=swap');
+
+
+/* General */
+$scale:13px;                    /* initial font size */ 
+$border-radius:.375rem;              /* border radius of layout element e.g. card, sidebar */ 
+$border-width: 1px;
+$transitionDuration:.2s;        /* transition duration of layout elements e.g. sidebar, overlay menus */
+$title-font-size: 22px;
+$top-height: 60px;
+
+$required-color: #ed6f6f;
+$false-color: #ed6f6f;
+$true-color: #6fed80;
+$warning-color: #edd26f;
+$error-color: $false-color;
+$success-color: $true-color;
+
+$font: 'Jost','Roboto', 'Segoe UI', Helvetica, Verdana, sans-serif;
+$font-weight: 400;
+$ribbon-font: 'Roboto Condensed';
+
+$positive: $true-color;
+$negative: $false-color;
+$increment: $true-color;
+$decrement: $false-color;
+
+//palette 1
+$olive-base: #556B2F;
+$plum-base: #6b2f55;
+$marine-base: #243e73;
+
+// $olive: #8baf4cd0;
+// $plum: #ff61c59b;
+// $marine: #61c5ffaf;
+
+// $veryblue: #18d8ff;
+$indigo:  #b19df7;   //#7f6fe9;
+// $cornflower: #6b9fff;
+
+$wolf: #b8c1c5;
+$lime: #49fd49;
+
+$primary-color: #9bc5c5;
+$secondary-color: #2d475d;      //#2F2A6B
+$accent: #ff5c36;
+
+// $primary-color: #9b92ff;
+// $secondary-color: #2F2A6B;
+// $accent: #f89f5b;
+
+$primary-color: #8ab4d5 ;   //#b3d7fa;
+$secondary-color: darken($primary-color, 40%);  //#2B4163
+$accent: #ff5c36;
+
+$accent-offset: darken($accent, 30%);
+$accent-bg: $accent;
+$callout-bg: $secondary-color;
+$highlight: darken($accent, 12.5%);   //#ad0000;
+$text-color: #dddddd;
+
+//#FF5C36
+$callout-text: $accent;
+$callout-bg: $secondary-color;
+$callout-button-text: $text-color;
+$callout-button-text-hover: lighten($callout-button-text, 10%);
+$callout-link-button-text: $primary-color;
+$splash-banner-bg: $callout-bg;
+$splash-banner-color: $text-color;
+$leader-text: #b3d7fa;
+
+$primary-text: darken($primary-color, 0%);
+$primary-link: darken($primary-color, 10%);
+$primary-color-hover: red;
+$primary-text-hover: $primary-color;
+$menu-link: $accent;
+$menu-bg: #171a1e;
+$selected-color: $primary-color;
+$hover-color: $primary-color;
+$icon-color: $primary-color;
+
+$link-text: $secondary-color;
+$link-button-text: $callout-text;
+
+$app-name-0 : $wolf;
+$app-name-1 : $wolf;
+$app-icon-color: #863572;
+
+$base:#1a1d21    ;   //#282828;      //#1D2229
+$surface-0: $base;
+$surface-0-box-shadow:  0 0 0 0 darken($surface-0, 0%);
+$section:lighten($surface-0, 4.5%);   //#1f1f2bf5;
+$section-border: lighten($section, 5%);
+$header:#17171a;
+$header-border: lighten($header, 7.5%);
+$sidebar: $menu-bg;
+$menu-border: lighten($section-border, 7.5%);
+$surface-5: darken($surface-0, .5%);   // #191923;
+$surface-10:  lighten($surface-0, 5%);
+$surface-10-border-color: lighten($surface-10, 10%);
+$surface-10-border: 1px solid $surface-10-border-color;
+$surface-10-box-shadow: none;
+$surface-10-popup: darken($surface-10, 5%);
+$border-color: lighten($surface-10-border-color, 3.5%);     //lighten($surface-0, 17.5%);
+$border: $border-width solid $border-color;                                      
+$surface-20: lighten($surface-10, 2.5%);
+$surface-20-border-color: lighten($surface-20, 7%);
+$surface-20-border: $border-width solid $surface-20-border-color;
+$surface-20-button: lighten($surface-20, 3.5%);
+
+$primary-text-color: $primary-color;
+$primary-text-color-hover: lighten($primary-text-color, 10%);
+
+$text-color-light: lighten($text-color, 10%);
+$text-color-secondary: #ffffff99;
+$menu-text: $text-color-light;
+//$menu-text-color-sec
+
+$input-bg-color: darken($surface-10, 5%);
+$input-border-color: lighten($surface-10, 10%);
+$button-box-shadow: lighten($border-color, 10%);
+$button-bg-color: lighten($section, 3.5%);
+$dialog-border: 1px solid $border-color;
+$button-color-hover: $primary-text-color-hover;
+$context-menu-background: $surface-0;
+$context-menu-background-hover: lighten($context-menu-background, 5%);
+
+$table-head-bg: lighten($section, .5%);
+$alt-row-odd: lighten($table-head-bg, 3%);
+$alt-row-even: lighten($table-head-bg, 1.5%);
+$table-border: #383852;
+$table-row-border: $table-border;
+$table-row-line-height: 30px;
+$datatable-column-resizer: #505165;
+$paginator-bg: $table-head-bg;
+
+
+$gitorange: #ed755a;
+$cornflower: #6b9fff;
+$rose: #f44775;
+$util-tool-color: #65656c;
+$network-accent: $primary-color;   //#f88000;
+$staking-accent: #ff5c36;
+$distribution-accent: $rose;
+$nodes-accent: $lime;
+/*
+$primeblue: #64B5F6;
+$cornflower: #6b9fff;
+$nepal: #90d8ff;
+$nepal-light: #6fa7c5;
+$gitblue: #4b9cfa;
+$skyblue: #6dd5fe;
+$veryblue: #48daf7;
+$indigo: #9c8aec;
+$teal: #43a294;
+$aqua : #2effff;
+$limegreen: #58e958;
+$mint: #6ec79f;
+$lime: #49fd49;
+$olive: olive;
+$avocado: #bbff3d;
+$canary: #e3e382;
+$mustard: #d4c47c;
+$orange: #fc4c02;
+$gitorange: #ed755a;
+$rose: #f44775;
+$maroon: #800000;
+$gold: #ffe23b;
+$peach: #ff834e;
+$sunset: #dda77e;
+$eagle: #6d7357;
+$juniper: #63a6b3;
+$mystic: #77acb6;
+$sail: #92a5c1;
+$lightsail: #dde6ed;
+$regent: #8197b3;
+$earth: #dfc478;
+$vs: #7f6fe9;
+$vs-light: #9081ed;
+$chrome-purple: #673ab7;
+*/

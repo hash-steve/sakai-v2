@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://cdpn.io/Graphettion/fullpage/OxezbO?anon=true&view= -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  <title>CodePen - Quill Editor</title>
+    <link rel="canonical" href="https://codepen.io/Graphettion/pen/OxezbO">
+  
+  
+  <link rel="stylesheet" href="./quill.snow.min.css">
+  
+<style>
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+}
+
+body {
+  background: #303030;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.section1,
+.section2 {
+  float: left;
+}
+
+.section1 {
+  width: 80%;
+  max-width: 600px;
+}
+
+.section2 {
+  width: 20%;
+  max-width: 158px;
+  overflow-wrap: break-word;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ql-toolbar,
+.ql-editor,
+.ql-blank {
+  background: #fff;
+  color: #000;
+}
+
+#quill-editor {
+  height: 375px;
+  box-shadow: 6px 6px 6px 0 rgba(0, 0, 0, 0.75);
+}
+
+.ql-showHtml {
+  margin-right: 8px;
+}
+
+.ql-showHtml:after {
+  content: "<html>";
+}
+
+.ql-picker.ql-emailVars {
+  width: 160px;
+}
+
+.ql-picker.ql-emailVars .ql-picker-item::before, 
+.ql-picker.ql-emailVars .ql-picker-label::before {
+  content: 'Custom'
+}
+
+.ql-picker.ql-emailVars [data-value="1"]::before {
+  content: '{AccountURL}'
+}
+
+.ql-picker.ql-emailVars [data-value="2"]::before {
+  content: '{FirstName}'
+}
+
+.ql-picker.ql-emailVars [data-value="3"]::before {
+  content: '{Login}'
+}
+
+.ql-picker.ql-emailVars [data-value="4"]::before {
+  content: '{OrganizationName}'
+}
+
+.ql-picker.ql-emailVars [data-value="5"]::before {
+  content: '{SupportEmail}'
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div id="quill-editor-toolbar" class="ql-toolbar ql-snow">
+  <span class="ql-emailVars ql-picker"><span class="ql-picker-label" data-value="1"><svg viewBox="0 0 18 18"> <polygon class="ql-stroke" points="7 11 9 13 11 11 7 11"></polygon> <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon> </svg></span><span class="ql-picker-options"><span class="ql-picker-item" data-value="1"></span><span class="ql-picker-item" data-value="2"></span><span class="ql-picker-item" data-value="3"></span><span class="ql-picker-item" data-value="4"></span><span class="ql-picker-item" data-value="5"></span></span></span><select class="ql-emailVars" style="display: none;">
+    <option value="1"></option>
+    <option value="2"></option>
+    <option value="3"></option>
+    <option value="4"></option>
+    <option value="5"></option>
+  </select>
+  <span class="ql-header ql-picker"><span class="ql-picker-label"><svg viewBox="0 0 18 18"> <polygon class="ql-stroke" points="7 11 9 13 11 11 7 11"></polygon> <polygon class="ql-stroke" points="7 7 9 5 11 7 7 7"></polygon> </svg></span><span class="ql-picker-options"><span class="ql-picker-item" data-value="1"></span><span class="ql-picker-item" data-value="2"></span><span class="ql-picker-item" data-value="3"></span><span class="ql-picker-item ql-selected"></span></span></span><select class="ql-header" style="display: none;"><option value="1"></option><option value="2"></option><option value="3"></option><option selected="selected"></option></select>
+  <button class="ql-header" type="button"></button>
+  <button class="ql-color" type="button"><svg viewBox="0 0 18 18"> <line class="ql-color-label ql-stroke ql-transparent" x1="3" x2="15" y1="15" y2="15"></line> <polyline class="ql-stroke" points="5.5 11 9 3 12.5 11"></polyline> <line class="ql-stroke" x1="11.63" x2="6.38" y1="9" y2="9"></line> </svg></button>
+  <button class="ql-background" type="button"><svg viewBox="0 0 18 18"> <g class="ql-fill ql-color-label"> <polygon points="6 6.868 6 6 5 6 5 7 5.942 7 6 6.868"></polygon> <rect height="1" width="1" x="4" y="4"></rect> <polygon points="6.817 5 6 5 6 6 6.38 6 6.817 5"></polygon> <rect height="1" width="1" x="2" y="6"></rect> <rect height="1" width="1" x="3" y="5"></rect> <rect height="1" width="1" x="4" y="7"></rect> <polygon points="4 11.439 4 11 3 11 3 12 3.755 12 4 11.439"></polygon> <rect height="1" width="1" x="2" y="12"></rect> <rect height="1" width="1" x="2" y="9"></rect> <rect height="1" width="1" x="2" y="15"></rect> <polygon points="4.63 10 4 10 4 11 4.192 11 4.63 10"></polygon> <rect height="1" width="1" x="3" y="8"></rect> <path d="M10.832,4.2L11,4.582V4H10.708A1.948,1.948,0,0,1,10.832,4.2Z"></path> <path d="M7,4.582L7.168,4.2A1.929,1.929,0,0,1,7.292,4H7V4.582Z"></path> <path d="M8,13H7.683l-0.351.8a1.933,1.933,0,0,1-.124.2H8V13Z"></path> <rect height="1" width="1" x="12" y="2"></rect> <rect height="1" width="1" x="11" y="3"></rect> <path d="M9,3H8V3.282A1.985,1.985,0,0,1,9,3Z"></path> <rect height="1" width="1" x="2" y="3"></rect> <rect height="1" width="1" x="6" y="2"></rect> <rect height="1" width="1" x="3" y="2"></rect> <rect height="1" width="1" x="5" y="3"></rect> <rect height="1" width="1" x="9" y="2"></rect> <rect height="1" width="1" x="15" y="14"></rect> <polygon points="13.447 10.174 13.469 10.225 13.472 10.232 13.808 11 14 11 14 10 13.37 10 13.447 10.174"></polygon> <rect height="1" width="1" x="13" y="7"></rect> <rect height="1" width="1" x="15" y="5"></rect> <rect height="1" width="1" x="14" y="6"></rect> <rect height="1" width="1" x="15" y="8"></rect> <rect height="1" width="1" x="14" y="9"></rect> <path d="M3.775,14H3v1H4V14.314A1.97,1.97,0,0,1,3.775,14Z"></path> <rect height="1" width="1" x="14" y="3"></rect> <polygon points="12 6.868 12 6 11.62 6 12 6.868"></polygon> <rect height="1" width="1" x="15" y="2"></rect> <rect height="1" width="1" x="12" y="5"></rect> <rect height="1" width="1" x="13" y="4"></rect> <polygon points="12.933 9 13 9 13 8 12.495 8 12.933 9"></polygon> <rect height="1" width="1" x="9" y="14"></rect> <rect height="1" width="1" x="8" y="15"></rect> <path d="M6,14.926V15H7V14.316A1.993,1.993,0,0,1,6,14.926Z"></path> <rect height="1" width="1" x="5" y="15"></rect> <path d="M10.668,13.8L10.317,13H10v1h0.792A1.947,1.947,0,0,1,10.668,13.8Z"></path> <rect height="1" width="1" x="11" y="15"></rect> <path d="M14.332,12.2a1.99,1.99,0,0,1,.166.8H15V12H14.245Z"></path> <rect height="1" width="1" x="14" y="15"></rect> <rect height="1" width="1" x="15" y="11"></rect> </g> <polyline class="ql-stroke" points="5.5 13 9 5 12.5 13"></polyline> <line class="ql-stroke" x1="11.63" x2="6.38" y1="11" y2="11"></line> </svg></button>
+  <button class="ql-bold" type="button"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,4H9.5A2.5,2.5,0,0,1,12,6.5v0A2.5,2.5,0,0,1,9.5,9H5A0,0,0,0,1,5,9V4A0,0,0,0,1,5,4Z"></path> <path class="ql-stroke" d="M5,9h5.5A2.5,2.5,0,0,1,13,11.5v0A2.5,2.5,0,0,1,10.5,14H5a0,0,0,0,1,0,0V9A0,0,0,0,1,5,9Z"></path> </svg></button>
+  <button class="ql-italic" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="13" y1="4" y2="4"></line> <line class="ql-stroke" x1="5" x2="11" y1="14" y2="14"></line> <line class="ql-stroke" x1="8" x2="10" y1="14" y2="4"></line> </svg></button>
+  <button class="ql-underline" type="button"><svg viewBox="0 0 18 18"> <path class="ql-stroke" d="M5,3V9a4.012,4.012,0,0,0,4,4H9a4.012,4.012,0,0,0,4-4V3"></path> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="12" x="3" y="15"></rect> </svg></button>
+  <button class="ql-strike" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke ql-thin" x1="15.5" x2="2.5" y1="8.5" y2="9.5"></line> <path class="ql-fill" d="M9.007,8C6.542,7.791,6,7.519,6,6.5,6,5.792,7.283,5,9,5c1.571,0,2.765.679,2.969,1.309a1,1,0,0,0,1.9-.617C13.356,4.106,11.354,3,9,3,6.2,3,4,4.538,4,6.5a3.2,3.2,0,0,0,.5,1.843Z"></path> <path class="ql-fill" d="M8.984,10C11.457,10.208,12,10.479,12,11.5c0,0.708-1.283,1.5-3,1.5-1.571,0-2.765-.679-2.969-1.309a1,1,0,1,0-1.9.617C4.644,13.894,6.646,15,9,15c2.8,0,5-1.538,5-3.5a3.2,3.2,0,0,0-.5-1.843Z"></path> </svg></button>
+  <span class="ql-format">
+    <button class="ql-indent" value="-1" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="3" x2="15" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="9" x2="15" y1="9" y2="9"></line> <polyline class="ql-stroke" points="5 7 5 11 3 9 5 7"></polyline> </svg></button>
+    <button class="ql-indent" value="+1" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="3" x2="15" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="15" y1="4" y2="4"></line> <line class="ql-stroke" x1="9" x2="15" y1="9" y2="9"></line> <polyline class="ql-fill ql-stroke" points="3 7 3 11 5 9 3 7"></polyline> </svg></button>
+  </span>
+  <button class="ql-indent" type="button"></button>
+  <span class="ql-align ql-picker ql-icon-picker"><span class="ql-picker-label"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="3" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="3" x2="13" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="9" y1="4" y2="4"></line> </svg></span><span class="ql-picker-options"><span class="ql-picker-item ql-selected"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="3" x2="15" y1="9" y2="9"></line> <line class="ql-stroke" x1="3" x2="13" y1="14" y2="14"></line> <line class="ql-stroke" x1="3" x2="9" y1="4" y2="4"></line> </svg></span><span class="ql-picker-item" data-value="center"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="15" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="14" x2="4" y1="14" y2="14"></line> <line class="ql-stroke" x1="12" x2="6" y1="4" y2="4"></line> </svg></span><span class="ql-picker-item" data-value="right"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="15" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="15" x2="5" y1="14" y2="14"></line> <line class="ql-stroke" x1="15" x2="9" y1="4" y2="4"></line> </svg></span><span class="ql-picker-item" data-value="justify"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="15" x2="3" y1="9" y2="9"></line> <line class="ql-stroke" x1="15" x2="3" y1="14" y2="14"></line> <line class="ql-stroke" x1="15" x2="3" y1="4" y2="4"></line> </svg></span></span></span><select class="ql-align" style="display: none;"><option selected="selected"></option><option value="center"></option><option value="right"></option><option value="justify"></option></select>
+  <button class="ql-clean" type="button"><svg class="" viewBox="0 0 18 18"> <line class="ql-stroke" x1="5" x2="13" y1="3" y2="3"></line> <line class="ql-stroke" x1="6" x2="9.35" y1="12" y2="3"></line> <line class="ql-stroke" x1="11" x2="15" y1="11" y2="15"></line> <line class="ql-stroke" x1="15" x2="11" y1="11" y2="15"></line> <rect class="ql-fill" height="1" rx="0.5" ry="0.5" width="7" x="2" y="14"></rect> </svg></button>
+  <button class="ql-link" type="button"><svg viewBox="0 0 18 18"> <line class="ql-stroke" x1="7" x2="11" y1="7" y2="11"></line> <path class="ql-even ql-stroke" d="M8.9,4.577a3.476,3.476,0,0,1,.36,4.679A3.476,3.476,0,0,1,4.577,8.9C3.185,7.5,2.035,6.4,4.217,4.217S7.5,3.185,8.9,4.577Z"></path> <path class="ql-even ql-stroke" d="M13.423,9.1a3.476,3.476,0,0,0-4.679-.36,3.476,3.476,0,0,0,.36,4.679c1.392,1.392,2.5,2.542,4.679.36S14.815,10.5,13.423,9.1Z"></path> </svg></button>
+  <button class="ql-image" type="button"><svg viewBox="0 0 18 18"> <rect class="ql-stroke" height="10" width="12" x="3" y="4"></rect> <circle class="ql-fill" cx="6" cy="7" r="1"></circle> <polyline class="ql-even ql-fill" points="5 12 5 11 7 9 8 10 11 7 13 9 13 12 5 12"></polyline> </svg></button>
+  <button class="ql-showHtml" type="button"></button>
+</div>
+<div id="quill-editor" class="ql-container ql-snow"><div class="ql-editor" data-gramm="false" contenteditable="true"><p>rwreqw twqte</p><p>sdasgasgsag zdsgsg ZFGasga ahH</p><p>f</p><p><br></p><p><br></p></div><div class="ql-clipboard" contenteditable="true" tabindex="-1"></div><div class="ql-tooltip ql-hidden"><a class="ql-preview" target="_blank" href="about:blank"></a><input type="text" data-formula="e=mc^2" data-link="https://quilljs.com" data-video="Embed URL"><a class="ql-action"></a><a class="ql-remove"></a></div><div class="ql-custom"><textarea style="width: 100%; margin: 0px; background: rgb(29, 29, 29); box-sizing: border-box; color: rgb(204, 204, 204); font-size: 15px; outline: none; padding: 20px; line-height: 24px; position: absolute; top: 0px; bottom: 0px; border: none; display: none;"></textarea></div></div>
+
+<div class="quill-text-output">&lt;p&gt;rwreqw twqte&lt;/p&gt;&lt;p&gt;sdasgasgsag zdsgsg ZFGasga ahH&lt;/p&gt;&lt;p&gt;f&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</div>
+<div class="quill-html-output"><p>rwreqw twqte</p><p>sdasgasgsag zdsgsg ZFGasga ahH</p><p>f</p><p><br></p><p><br></p></div>
+    <script src="./stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js.download"></script>
+
+  <script src="./quill.min.js.download"></script>
+      <script id="rendered-js">
+this.quill = new Quill("#quill-editor", {
+  modules: {
+    toolbar: {
+      container: "#quill-editor-toolbar",
+      handlers: {
+        "emailVars": this.emailVars } } },
+
+
+
+  theme: 'snow' });
+
+
+function emailVars(args) {
+  const value = args[0];
+  const cursorPosition = this.quill.getSelection().index;
+
+  if (value == 1) {
+    this.quill.insertText(cursorPosition, "{AccountURL}");
+  } else if (value == 2) {
+    this.quill.insertText(cursorPosition, "{FirstName}");
+  } else if (value == 3) {
+    this.quill.insertText(cursorPosition, "{Login}");
+  } else if (value == 4) {
+    this.quill.insertText(cursorPosition, "{OrganizationName}");
+  } else if (value == 5) {
+    this.quill.insertText(cursorPosition, "{SupportEmail}");
+  } else {
+    this.quill.insertText(cursorPosition, "Please add an email variable.");
+  }
+
+  this.quill.setSelection(cursorPosition + value.length);
+}
+
+function PreviewHTML() {
+  const txtArea = document.createElement('textarea');
+  txtArea.style.cssText = "width: 100%;margin: 0px;background: rgb(29, 29, 29);box-sizing: border-box;color: rgb(204, 204, 204);font-size: 15px;outline: none;padding: 20px;line-height: 24px;font-family: Consolas, Menlo, Monaco, &quot;Courier New&quot;, monospace;position: absolute;top: 0;bottom: 0;border: none;display:none";
+
+  const htmlEditor = this.quill.addContainer('ql-custom');
+  htmlEditor.appendChild(txtArea);
+
+  const selfQuill = this.quill;
+  const myEditor = document.querySelector('#quill-editor');
+
+  this.quill.on('text-change', function (delta, oldDelta, source) {
+    const text = selfQuill.root.innerHTML;
+    const html = myEditor.children[0].innerHTML;
+
+    txtArea.value = html;
+
+    document.querySelector('.quill-text-output').innerText = text;
+    document.querySelector('.quill-html-output').innerHTML = html;
+  });
+
+  const customButton = document.querySelector('.ql-showHtml');
+  customButton.addEventListener('click', function () {
+    if (txtArea.style.display==='') {
+      const html = txtArea.value;
+      selfQuill.pasteHTML(html);
+    }
+    txtArea.style.display = txtArea.style.display==='none' ? '' : 'none';
+  });
+}
+
+PreviewHTML();
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+</body></html>

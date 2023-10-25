@@ -1,0 +1,12 @@
+.p-datepicker-header {
+    background: $surface-10-popup !important;
+    border-bottom: $border !important;
+    .p-link:focus {
+        box-shadow: none;
+    }
+}
+.p-datepicker:not(.p-datepicker-inline) {
+    background: $surface-10-popup !important;
+    border: $border;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}

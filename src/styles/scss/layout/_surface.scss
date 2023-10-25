@@ -1,0 +1,24 @@
+.surface-card {
+    background: $surface-10 !important;
+    border-radius: $border-radius;
+    border: $border;
+}
+.surface-ground,
+.surface-section {
+    background: red !important;
+
+}
+.surface-border {
+    border-color: $surface-10 !important;
+    border-right: 0;
+    border: 0;
+}
+
+.surface-section .p-card,
+.surface-section .p-card .p-card-body {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.surface-bg-border-right {
+    border-right: $border;
+}

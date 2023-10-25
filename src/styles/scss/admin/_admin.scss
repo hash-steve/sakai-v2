@@ -1,0 +1,202 @@
+.p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+    background: unset !important;
+    border-color: $primary-color  !important;
+}
+.p-tabview .p-tabview-nav {
+    border-bottom: 2px solid $surface-10-border-color;
+}
+
+#AccountGroups {
+    .p-datatable-table {
+        tr {
+            th[role="columnheader"],
+            td[role="cell"] {
+                padding-left: 32px;
+                font-size:17px;
+            }        
+        }
+        tr.p-rowgroup-footer td {
+            padding-left: 40%;
+        }
+
+        .rowgroup-head-name {
+            width: 25%;
+            display: inline-block;
+            font-size:17px;
+        }
+    }
+}
+.admin {
+    margin: 7.5px 10px;
+    .p-card {
+        padding: 0;
+        .p-card-body {
+            padding-top: 0;
+        }
+    }
+}
+.admin.dialog {
+    .p-dialog-content {
+        overflow: hidden;       
+    }
+}
+.admin.table,
+.admin.form {
+    .baseline {
+        align-items: baseline;
+    }
+    .columns {
+        width: 100%;
+        .column {
+            border: 0px solid skyblue;
+            margin-bottom:10px;
+            width: 100%;
+            .center {
+                border: 0px solid orange;
+                width: 100%;
+                align-items:unset !important;
+                >div {
+                    align-items: center;
+                    display: flex;
+                    // flex-direction: row;
+                }
+                >div:first-of-type {
+                    border: 0px solid lime;
+                    width: 37.5%;                    
+                }
+                >div:last-of-type {
+                    border: 0px solid purple;
+                    width: 40%;
+                }
+            }
+        }
+    }
+    .column {
+        border: 0px solid skyblue;
+        margin-bottom:10px;
+        label {
+            text-align: right;
+            display: block;
+            margin-right: 10px;
+        }
+        .center {
+            border: 0px solid orange;
+            width: 50%;
+            >div:first-of-type {
+                border: 0px solid lime;
+                width: 25%;
+                
+            }
+            >div:last-of-type {
+                border: 0px solid purple;
+                width: 75%;
+            }
+        }
+        .input-date {
+            width: 250px;
+        }
+    }
+    .pi:not(.p-c) {
+        font-size:20px;
+        width: 100%;
+        text-align:center;
+        vertical-align: text-bottom;
+    }
+    .pi.true-icon {
+        color: $true-color;
+    }
+    .pi.false-icon {
+        color: $false-color;
+    }
+
+    .blog {
+        border: 0px solid red;
+        #Title {
+            width:450px !important;
+        }
+        #Category, #DateCreated, #DatePublished,#Active {
+            width:200px !important;
+        }
+        .articleid {
+            width:100px;
+            max-width:100px;
+        }
+    }
+
+    .node {
+        overflow: hidden;
+        border: 0px solid red;
+        .nodeid input{
+            width: 100px;
+        }
+    }
+
+    .ql-editor{
+        height: 350px;
+    }
+}
+
+.admin.table {
+    .p-toolbar {
+        margin-bottom:10px !important;
+    }
+    .p-datatable {
+        .title {
+            width: 20%;
+        }
+        .column-crud {
+            width: 125px !important;
+            text-align:center;
+        }
+        .content {
+            max-width: 550px !important;
+        }
+        .active {
+            width: 100px;
+        }
+        .owner, .hq, .sector, .geolocation, .coordinates {
+            width: 210px;
+        }
+        .bio {
+            max-width: 220px;
+            text-overflow: ellipses;
+        }
+        th[class^='date'] {
+            max-width: 125px;
+        }
+    }
+    
+    .datatable-entityaliases {
+        .aliasname  {
+            width: 25%;
+        }
+    }
+    .datatable-admindata {
+        .dataname  {
+            width: 40%;
+        }
+    }    
+}
+
+.admin.form {
+    .p-inputtext {
+        width: 215px;
+    }
+    .entity-alias {
+        .shard, .realm, .num {
+            width: 100px;
+        }
+    }
+
+    .editor {
+        label {
+            position: relative;
+            left: 12px;
+        }
+    }
+    div[class$="-content-editor"] {        
+        label {
+            padding-left: 10px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.account-lookup {
+    min-width:1175px !important;
+    min-height:275px !important;
+    height: auto;
+    max-height: auto;
+    background: $surface-20;
+    .p-dialog-content {
+        flex-grow: 0 !important;
+        //min-height: 820px;
+    }
+    .p-dialog-footer {
+        padding: 0 !important;
+    }
+    .account-delim{
+        position: relative;
+        top: 3px;
+        font-size: 1.5em;
+    }
+    .p-panel-content {
+        text-align: center;
+        button {
+            
+        }
+    }
+}

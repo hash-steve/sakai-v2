@@ -1,0 +1,70 @@
+.plan-block-inauguralrate {
+    --d: 6px; /* folded part */
+    --f: 18px; /* ribbon font-size */
+
+    position: relative;
+    display: inline-block;    
+  }
+  
+  .plan-block-inauguralrate::before {
+    content: attr(data-ribbon);
+    position: absolute;
+    font-size: var(--f);
+    top: 0;
+    right: 0;
+    transform: translate(29.29%, -100%) rotate(45deg);
+    color: #fff;
+    text-align: center;
+    border: 1px solid transparent;
+    border-bottom: 0;
+    transform-origin: bottom left;
+    padding: 5px 35px calc(var(--d) + 5px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5) 0 0) bottom/100% var(--d)
+      no-repeat $callout-bg;
+    background-clip: padding-box;
+    clip-path: polygon(0 0,100% 0,100% 100%,calc(100% - var(--d)) calc(100% - var(--d)),var(--d) calc(100% - var(--d)),0 100%);
+    -webkit-mask: linear-gradient(135deg,transparent calc(50% - var(--d) * 0.707),#fff 0) bottom left,
+      linear-gradient(-135deg, transparent calc(50% - var(--d) * 0.707), #fff 0)bottom right;
+    -webkit-mask-size: 300vmax 300vmax;
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+  }
+  .left::before {
+    left: 0;
+    right: auto;
+    transform: translate(-29.29%, -100%) rotate(-45deg);
+    transform-origin: bottom right;
+  }
+
+.banner {
+    border-radius: 0px;
+    font-family: $ribbon-font !important;
+    font-weight: 500;
+    font-size:1.75em !important;
+    text-align: center;
+    padding: 0 0.5em;
+    width: 100%;
+    background: $splash-banner-bg;
+    color: $splash-banner-color;
+    z-index:999;
+    position: absolute;
+}
+.banner--wrapper{  
+    visibility: visible;        
+    margin: calc(.1vh) auto calc(100vh - 90vh);          
+    padding: 1.250em;       
+    background:$surface-20;
+    min-height: 3.750em; 
+    border-radius: $border-radius;
+    border: 1px solid $surface-10-border;
+    line-height: 1.5em;
+    color: $text-color;
+}
+
+.new-mem {
+    color: $accent;
+    width: 100%;
+    border: 0px solid red;
+    font-size: 20px;
+    margin-right:100px;
+}
